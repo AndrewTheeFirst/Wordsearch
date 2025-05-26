@@ -3,7 +3,7 @@
 #include <vector>
 #include "wordsearch.h"
 
-constexpr int NUM_WORDS = 10;
+constexpr int NUM_WORDS = 12;
 
 // Reads NUM_WORDS words from the standard input stream and places them
 // into a vector words.  Next it reads in a word search puzzle into 

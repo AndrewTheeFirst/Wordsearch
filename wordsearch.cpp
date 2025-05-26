@@ -98,7 +98,7 @@ std::string check_down(size_t column, size_t row, const LetterMatrix &puzzle, co
         current_word = wordlist[word_index];
         word_length = current_word.length();
         if (row + word_length > puzzle_height){ // skip if word cannot fit within space
-            break;
+            continue;
         }
         for (size_t letter_index = 0; letter_index < word_length; letter_index++){
             if (current_word[letter_index] != puzzle[row + letter_index][column]){
@@ -120,7 +120,7 @@ std::string check_left(size_t column, size_t row, const LetterMatrix &puzzle, co
         current_word = wordlist[word_index];
         word_length = current_word.length();
         if (column + 1 < word_length){ // skip if word cannot fit within space 
-            break;
+            continue;
         }
         // check if each letter matches current word
         // try: index = 0 word = 6, column = 5
@@ -146,7 +146,7 @@ std::string check_right(size_t column, size_t row, const LetterMatrix &puzzle, c
         current_word = wordlist[word_index];
         word_length = current_word.length();
         if (column + word_length > puzzle_width){ // skip if word cannot fit within space
-            break;
+            continue;
         }
         for (size_t letter_index = 0; letter_index < word_length; letter_index++){
             if (current_word[letter_index] != puzzle[row][column + letter_index]){
@@ -194,7 +194,7 @@ std::string check_up_right(size_t column, size_t row, const LetterMatrix &puzzle
         current_word = wordlist[word_index];
         word_length = current_word.length();
         if (column + word_length > puzzle_width || row + 1 < word_length){ // skip if word cannot fit within space
-            break;
+            continue;
         }
         for (size_t letter_index = 0; letter_index < word_length; letter_index++){
             if (current_word[letter_index] != puzzle[row - letter_index][column + letter_index]){
@@ -218,7 +218,7 @@ std::string check_down_left(size_t column, size_t row, const LetterMatrix &puzzl
         current_word = wordlist[word_index];
         word_length = current_word.length();
         if (row + word_length > puzzle_height || column + 1 < word_length){ // skip if word cannot fit within space
-            break;
+            continue;
         }
         for (size_t letter_index = 0; letter_index < word_length; letter_index++){
             if (current_word[letter_index] != puzzle[row + letter_index][column - letter_index]){
@@ -243,7 +243,7 @@ std::string check_down_right(size_t column, size_t row, const LetterMatrix &puzz
         current_word = wordlist[word_index];
         word_length = current_word.length();
         if (column + word_length > puzzle_width || row + word_length > puzzle_height){ // skip if word cannot fit within space
-            break;
+            continue;
         }
         for (size_t letter_index = 0; letter_index < word_length; letter_index++){
             if (current_word[letter_index] != puzzle[row + letter_index][column + letter_index]){
